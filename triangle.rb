@@ -14,7 +14,15 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  result = :scalene
+
+  if (a == b && a == c)
+    result = :equilateral
+  elsif (a == b || b == c || a == c)
+    result = :isosceles
+  end
+
+  result
 end
 
 # Error class used in part 2.  No need to change this code.
