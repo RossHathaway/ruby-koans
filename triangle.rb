@@ -16,9 +16,6 @@
 # all sides must be > 0
 # check if the largest side is less than sum of other two sides
 # 
-def sides_equal?(side_1, side_2)
-  side_1 == side_2
-end
 
 def triangle(a, b, c)
   sorted_sides = [a, b, c].sort
