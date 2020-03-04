@@ -13,7 +13,23 @@
 # and
 #   about_triangle_project_2.rb
 #
+# all sides must be > 0
+# check if the largest side is less than sum of other two sides
+# 
+def sides_equal?(side_1, side_2)
+  side_1 == side_2
+end
+
 def triangle(a, b, c)
+  sorted_sides = [a, b, c].sort
+
+  if sorted_sides.first <= 0
+    raise TriangleError, "Sides should be greater than 0"
+
+  elsif sorted_sides.last - sorted_sides[0, 2].sum >= 0
+    raise TriangleError, "Sum of smallest sides should be greater than largest side"
+  end
+
   result = :scalene
 
   if (a == b && a == c)
